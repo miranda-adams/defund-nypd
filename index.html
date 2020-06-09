@@ -17,7 +17,7 @@
             margin: 0;
         }
         </style>
-        <title>Tell your councilmember to #DefundtheNYPD</title>
+        <title>#DefundtheNYPD</title>
     </head>
     <body>
         <div id="map">
@@ -32,7 +32,7 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
-        <script src="data/DotheygenerallysupportcuttingtheNYPDsbudget_1.js"></script>
+        <script src="data/SupprtNYPDcuts_1.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -75,7 +75,7 @@
         });
         layer_BaseMap_0;
         map.addLayer(layer_BaseMap_0);
-        function pop_DotheygenerallysupportcuttingtheNYPDsbudget_1(feature, layer) {
+        function pop_SupprtNYPDcuts_1(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -118,11 +118,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_DotheygenerallysupportcuttingtheNYPDsbudget_1_0(feature) {
+        function style_SupprtNYPDcuts_1_0(feature) {
             switch(String(feature.properties['Do they ge'])) {
                 case 'NO':
                     return {
-                pane: 'pane_DotheygenerallysupportcuttingtheNYPDsbudget_1',
+                pane: 'pane_SupprtNYPDcuts_1',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.5)',
                 dashArray: '',
@@ -137,7 +137,7 @@
                     break;
                 case 'Position Unknown':
                     return {
-                pane: 'pane_DotheygenerallysupportcuttingtheNYPDsbudget_1',
+                pane: 'pane_SupprtNYPDcuts_1',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.5)',
                 dashArray: '',
@@ -152,7 +152,7 @@
                     break;
                 case 'YES':
                     return {
-                pane: 'pane_DotheygenerallysupportcuttingtheNYPDsbudget_1',
+                pane: 'pane_SupprtNYPDcuts_1',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.5)',
                 dashArray: '',
@@ -167,7 +167,7 @@
                     break;
                 default:
                     return {
-                pane: 'pane_DotheygenerallysupportcuttingtheNYPDsbudget_1',
+                pane: 'pane_SupprtNYPDcuts_1',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.5)',
                 dashArray: '',
@@ -182,20 +182,20 @@
                     break;
             }
         }
-        map.createPane('pane_DotheygenerallysupportcuttingtheNYPDsbudget_1');
-        map.getPane('pane_DotheygenerallysupportcuttingtheNYPDsbudget_1').style.zIndex = 401;
-        map.getPane('pane_DotheygenerallysupportcuttingtheNYPDsbudget_1').style['mix-blend-mode'] = 'normal';
-        var layer_DotheygenerallysupportcuttingtheNYPDsbudget_1 = new L.geoJson(json_DotheygenerallysupportcuttingtheNYPDsbudget_1, {
+        map.createPane('pane_SupprtNYPDcuts_1');
+        map.getPane('pane_SupprtNYPDcuts_1').style.zIndex = 401;
+        map.getPane('pane_SupprtNYPDcuts_1').style['mix-blend-mode'] = 'normal';
+        var layer_SupprtNYPDcuts_1 = new L.geoJson(json_SupprtNYPDcuts_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_DotheygenerallysupportcuttingtheNYPDsbudget_1',
-            layerName: 'layer_DotheygenerallysupportcuttingtheNYPDsbudget_1',
-            pane: 'pane_DotheygenerallysupportcuttingtheNYPDsbudget_1',
-            onEachFeature: pop_DotheygenerallysupportcuttingtheNYPDsbudget_1,
-            style: style_DotheygenerallysupportcuttingtheNYPDsbudget_1_0,
+            dataVar: 'json_SupprtNYPDcuts_1',
+            layerName: 'layer_SupprtNYPDcuts_1',
+            pane: 'pane_SupprtNYPDcuts_1',
+            onEachFeature: pop_SupprtNYPDcuts_1,
+            style: style_SupprtNYPDcuts_1_0,
         });
-        bounds_group.addLayer(layer_DotheygenerallysupportcuttingtheNYPDsbudget_1);
-        map.addLayer(layer_DotheygenerallysupportcuttingtheNYPDsbudget_1);
+        bounds_group.addLayer(layer_SupprtNYPDcuts_1);
+        map.addLayer(layer_SupprtNYPDcuts_1);
             var title = new L.Control();
             title.onAdd = function (map) {
                 this._div = L.DomUtil.create('div', 'info');
@@ -203,7 +203,7 @@
                 return this._div;
             };
             title.update = function () {
-                this._div.innerHTML = '<h2>Tell your councilmember to #DefundtheNYPD</h2>';
+                this._div.innerHTML = '<h2>#DefundtheNYPD</h2>';
             };
             title.addTo(map);
         var osmGeocoder = new L.Control.Geocoder({
@@ -217,7 +217,7 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'Do they generally support cutting the NYPD\'s budget?<br /><table><tr><td style="text-align: center;"><img src="legend/DotheygenerallysupportcuttingtheNYPDsbudget_1_No0.png" /></td><td>No</td></tr><tr><td style="text-align: center;"><img src="legend/DotheygenerallysupportcuttingtheNYPDsbudget_1_PositionUnknown1.png" /></td><td>Position Unknown</td></tr><tr><td style="text-align: center;"><img src="legend/DotheygenerallysupportcuttingtheNYPDsbudget_1_Yes2.png" /></td><td>Yes</td></tr><tr><td style="text-align: center;"><img src="legend/DotheygenerallysupportcuttingtheNYPDsbudget_1_Vacant3.png" /></td><td>(Vacant)</td></tr></table>': layer_DotheygenerallysupportcuttingtheNYPDsbudget_1,"Base Map": layer_BaseMap_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'Supprt NYPD cuts?<br /><table><tr><td style="text-align: center;"><img src="legend/SupprtNYPDcuts_1_No0.png" /></td><td>No</td></tr><tr><td style="text-align: center;"><img src="legend/SupprtNYPDcuts_1_PositionUnknown1.png" /></td><td>Position Unknown</td></tr><tr><td style="text-align: center;"><img src="legend/SupprtNYPDcuts_1_Yes2.png" /></td><td>Yes</td></tr><tr><td style="text-align: center;"><img src="legend/SupprtNYPDcuts_1_Vacant3.png" /></td><td>(Vacant)</td></tr></table>': layer_SupprtNYPDcuts_1,"Base Map": layer_BaseMap_0,},{collapsed:false}).addTo(map);
         setBounds();
         </script>
     </body>
