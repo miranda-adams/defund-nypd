@@ -754,3 +754,56 @@ function fnc__specialcol_(values, context) {
 function fnc_project_color(values, context) {
     return false;
 };
+
+
+
+function exp_Specificcutssupported_1rule0_eval_expression(context) {
+    // "Amount of" = 'At least $1 billion THIS YEAR'
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return (feature.properties['Amount of']  == 'At least $1 billion THIS YEAR');
+    } else {
+        return (feature['Amount of']  == 'At least $1 billion THIS YEAR');
+    }
+}
+
+
+function exp_Specificcutssupported_1rule1_eval_expression(context) {
+    // "Amount of" = '$1 billion THIS YEAR'
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return (feature.properties['Amount of']  == '$1 billion THIS YEAR');
+    } else {
+        return (feature['Amount of']  == '$1 billion THIS YEAR');
+    }
+}
+
+
+function exp_Specificcutssupported_1rule2_eval_expression(context) {
+    // "Amount of" = 'Less than $1 billion this year'
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return (feature.properties['Amount of']  == 'Less than $1 billion this year');
+    } else {
+        return (feature['Amount of']  == 'Less than $1 billion this year');
+    }
+}
+
+
+function exp_Specificcutssupported_1rule3_eval_expression(context) {
+    // "Amount of" = '$1 billion OVER FOUR YEARS'
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return (feature.properties['Amount of']  == '$1 billion OVER FOUR YEARS');
+    } else {
+        return (feature['Amount of']  == '$1 billion OVER FOUR YEARS');
+    }
+}

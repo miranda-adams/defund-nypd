@@ -17,7 +17,7 @@
             margin: 0;
         }
         </style>
-        <title>#DefundtheNYPD - 6/9/2020</title>
+        <title>#DefundtheNYPD - 6/10/2020</title>
     </head>
     <body>
         <div id="map">
@@ -32,7 +32,8 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
-        <script src="data/SupprtNYPDcuts_1.js"></script>
+        <script src="data/Specificcutssupported_1.js"></script>
+        <script src="data/SupprtNYPDcuts_2.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -75,7 +76,133 @@
         });
         layer_BaseMap_0;
         map.addLayer(layer_BaseMap_0);
-        function pop_SupprtNYPDcuts_1(feature, layer) {
+        function pop_Specificcutssupported_1(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">District</th>\
+                        <td>' + (feature.properties['CounDist'] !== null ? autolinker.link(feature.properties['CounDist'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Councilmember</th>\
+                        <td>' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Do they generally support cutting the NYPD\'s budget?</strong><br />' + (feature.properties['Do they ge'] !== null ? autolinker.link(feature.properties['Do they ge'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Will they vote against a budget that does not significantly cut the NYPD budget?</strong><br />' + (feature.properties['Will they'] !== null ? autolinker.link(feature.properties['Will they'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Amount of cuts</strong><br />' + (feature.properties['Amount of'] !== null ? autolinker.link(feature.properties['Amount of'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Email</th>\
+                        <td>' + (feature.properties['Email'] !== null ? autolinker.link(feature.properties['Email'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Main phone</th>\
+                        <td>' + (feature.properties['Legislativ'] !== null ? autolinker.link(feature.properties['Legislativ'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">District office phone</th>\
+                        <td>' + (feature.properties['District O'] !== null ? autolinker.link(feature.properties['District O'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+        function style_Specificcutssupported_1_0(feature) {
+            var context = {
+                feature: feature,
+                variables: {}
+            };
+            // Start of if blocks and style check logic
+            if (exp_Specificcutssupported_1rule0_eval_expression(context)) {
+                  return {
+                pane: 'pane_Specificcutssupported_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.649)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(4,58,24,0.649)',
+                interactive: true,
+            };
+                }
+                else if (exp_Specificcutssupported_1rule1_eval_expression(context)) {
+                  return {
+                pane: 'pane_Specificcutssupported_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.649)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(19,126,58,0.649)',
+                interactive: true,
+            };
+                }
+                else if (exp_Specificcutssupported_1rule2_eval_expression(context)) {
+                  return {
+                pane: 'pane_Specificcutssupported_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.649)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(97,185,121,0.649)',
+                interactive: true,
+            };
+                }
+                else if (exp_Specificcutssupported_1rule3_eval_expression(context)) {
+                  return {
+                pane: 'pane_Specificcutssupported_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.649)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(157,234,157,0.649)',
+                interactive: true,
+            };
+                }
+            else {
+                return {fill: false, stroke: false};
+            }
+        }
+        map.createPane('pane_Specificcutssupported_1');
+        map.getPane('pane_Specificcutssupported_1').style.zIndex = 401;
+        map.getPane('pane_Specificcutssupported_1').style['mix-blend-mode'] = 'normal';
+        var layer_Specificcutssupported_1 = new L.geoJson(json_Specificcutssupported_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Specificcutssupported_1',
+            layerName: 'layer_Specificcutssupported_1',
+            pane: 'pane_Specificcutssupported_1',
+            onEachFeature: pop_Specificcutssupported_1,
+            style: style_Specificcutssupported_1_0,
+        });
+        bounds_group.addLayer(layer_Specificcutssupported_1);
+        map.addLayer(layer_Specificcutssupported_1);
+        function pop_SupprtNYPDcuts_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -118,11 +245,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_SupprtNYPDcuts_1_0(feature) {
+        function style_SupprtNYPDcuts_2_0(feature) {
             switch(String(feature.properties['Do they ge'])) {
                 case 'NO':
                     return {
-                pane: 'pane_SupprtNYPDcuts_1',
+                pane: 'pane_SupprtNYPDcuts_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.5)',
                 dashArray: '',
@@ -137,7 +264,7 @@
                     break;
                 case 'Position Unknown':
                     return {
-                pane: 'pane_SupprtNYPDcuts_1',
+                pane: 'pane_SupprtNYPDcuts_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.5)',
                 dashArray: '',
@@ -152,7 +279,7 @@
                     break;
                 case 'YES':
                     return {
-                pane: 'pane_SupprtNYPDcuts_1',
+                pane: 'pane_SupprtNYPDcuts_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.5)',
                 dashArray: '',
@@ -167,7 +294,7 @@
                     break;
                 default:
                     return {
-                pane: 'pane_SupprtNYPDcuts_1',
+                pane: 'pane_SupprtNYPDcuts_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.5)',
                 dashArray: '',
@@ -182,20 +309,20 @@
                     break;
             }
         }
-        map.createPane('pane_SupprtNYPDcuts_1');
-        map.getPane('pane_SupprtNYPDcuts_1').style.zIndex = 401;
-        map.getPane('pane_SupprtNYPDcuts_1').style['mix-blend-mode'] = 'normal';
-        var layer_SupprtNYPDcuts_1 = new L.geoJson(json_SupprtNYPDcuts_1, {
+        map.createPane('pane_SupprtNYPDcuts_2');
+        map.getPane('pane_SupprtNYPDcuts_2').style.zIndex = 402;
+        map.getPane('pane_SupprtNYPDcuts_2').style['mix-blend-mode'] = 'normal';
+        var layer_SupprtNYPDcuts_2 = new L.geoJson(json_SupprtNYPDcuts_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_SupprtNYPDcuts_1',
-            layerName: 'layer_SupprtNYPDcuts_1',
-            pane: 'pane_SupprtNYPDcuts_1',
-            onEachFeature: pop_SupprtNYPDcuts_1,
-            style: style_SupprtNYPDcuts_1_0,
+            dataVar: 'json_SupprtNYPDcuts_2',
+            layerName: 'layer_SupprtNYPDcuts_2',
+            pane: 'pane_SupprtNYPDcuts_2',
+            onEachFeature: pop_SupprtNYPDcuts_2,
+            style: style_SupprtNYPDcuts_2_0,
         });
-        bounds_group.addLayer(layer_SupprtNYPDcuts_1);
-        map.addLayer(layer_SupprtNYPDcuts_1);
+        bounds_group.addLayer(layer_SupprtNYPDcuts_2);
+        map.addLayer(layer_SupprtNYPDcuts_2);
             var title = new L.Control();
             title.onAdd = function (map) {
                 this._div = L.DomUtil.create('div', 'info');
@@ -203,7 +330,7 @@
                 return this._div;
             };
             title.update = function () {
-                this._div.innerHTML = '<h2>#DefundtheNYPD - 6/9/2020</h2>';
+                this._div.innerHTML = '<h2>#DefundtheNYPD - 6/10/2020</h2>';
             };
             title.addTo(map);
         var osmGeocoder = new L.Control.Geocoder({
@@ -217,7 +344,7 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'Supprt NYPD cuts?<br /><table><tr><td style="text-align: center;"><img src="legend/SupprtNYPDcuts_1_No0.png" /></td><td>No</td></tr><tr><td style="text-align: center;"><img src="legend/SupprtNYPDcuts_1_PositionUnknown1.png" /></td><td>Position Unknown</td></tr><tr><td style="text-align: center;"><img src="legend/SupprtNYPDcuts_1_Yes2.png" /></td><td>Yes</td></tr><tr><td style="text-align: center;"><img src="legend/SupprtNYPDcuts_1_Vacant3.png" /></td><td>(Vacant)</td></tr></table>': layer_SupprtNYPDcuts_1,"Base Map": layer_BaseMap_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'Supprt NYPD cuts?<br /><table><tr><td style="text-align: center;"><img src="legend/SupprtNYPDcuts_2_No0.png" /></td><td>No</td></tr><tr><td style="text-align: center;"><img src="legend/SupprtNYPDcuts_2_PositionUnknown1.png" /></td><td>Position Unknown</td></tr><tr><td style="text-align: center;"><img src="legend/SupprtNYPDcuts_2_Yes2.png" /></td><td>Yes</td></tr><tr><td style="text-align: center;"><img src="legend/SupprtNYPDcuts_2_Vacant3.png" /></td><td>(Vacant)</td></tr></table>': layer_SupprtNYPDcuts_2,'Specific cuts supported<br /><table><tr><td style="text-align: center;"><img src="legend/Specificcutssupported_1_Atleast1billionthisyear0.png" /></td><td>At least $1 billion this year</td></tr><tr><td style="text-align: center;"><img src="legend/Specificcutssupported_1_1billionthisyear1.png" /></td><td>$1 billion this year</td></tr><tr><td style="text-align: center;"><img src="legend/Specificcutssupported_1_Lessthan1billionthisyear2.png" /></td><td>Less than $1 billion this year</td></tr><tr><td style="text-align: center;"><img src="legend/Specificcutssupported_1_1billionoverfouryears3.png" /></td><td>$1 billion over four years</td></tr></table>': layer_Specificcutssupported_1,"Base Map": layer_BaseMap_0,},{collapsed:false}).addTo(map);
         setBounds();
         </script>
     </body>
